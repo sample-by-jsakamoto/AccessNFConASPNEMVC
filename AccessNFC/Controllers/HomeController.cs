@@ -10,9 +10,13 @@ namespace AccessNFC.Controllers
         {
             var procStartInfo = new ProcessStartInfo
             {
-                // set FileName = "ls" and Arguments = "~/*" will made available run on Raspberry Pi with XSP4 asp.net web server command, may be.
+#if DEBUG
                 FileName = "cmd",
                 Arguments = "/c dir %windir%",
+#else
+                FileName = "ls",
+                Arguments = "-l /home/pi",
+#endif
 
                 RedirectStandardOutput = true,
                 UseShellExecute = false
