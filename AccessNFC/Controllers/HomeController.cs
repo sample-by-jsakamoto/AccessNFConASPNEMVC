@@ -14,8 +14,8 @@ namespace AccessNFC.Controllers
                 FileName = "cmd",
                 Arguments = "/c dir %windir%",
 #else
-                FileName = "ls",
-                Arguments = "-l /home/pi",
+                FileName = "sudo",
+                Arguments = "/home/pi/libnfc/libnfc-1.7.0-rc7/examples/nfc-poll",
 #endif
 
                 RedirectStandardOutput = true,
